@@ -17,19 +17,19 @@ const music = new Audio();
 const songs = [
     {
         path: '../songs/music-1.mp3',
-        displayName: 'Gethsemane',
+        displayName: 'I Love To See The Temple',
         cover: '../images/music-1.jpg',
         artist: 'Spiritual Guitar',
     },
     {
         path: '../songs/music-3.mp3',
-        displayName: 'I Love To See The Temple',
+        displayName: 'Come, Come, Ye Saints',
         cover: '../images/music-3.jpg',
         artist: 'Spiritual Guitar',
     },
     {
         path: '../songs/music-2.mp3',
-        displayName: 'Come, Come, Ye Saints',
+        displayName: 'Gesthemane',
         cover: '../images/music-2.jpg',
         artist: 'Spiritual Guitar',
     }
