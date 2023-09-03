@@ -1,74 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../images/G.png" style="border-radius: 50%;">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
     <link rel="stylesheet" href="style.css">
-        <link rel="icon" type="image/x-icon" href="images/G.png" style="border-radius: 50;">
+    <link rel="stylesheet" href="../music/player.css">
+
+
     <title>Spiritual Guitar</title>
 </head>
+
 <body>
 
-    <div class="circle"></div>
-    
-    <div class="login">
-        <img src="images/G.png" alt="Spiritual Guitar Logo">
-        <h3>Welcome Back!</h3>
-        <h2>Spiritual Guitar</h2>
-        <form class="login-form" id="loginForm">
-            <input type="password" id="passwordInput" placeholder="Enter your passcode">
-            <button type="submit" id="loginButton" disabled>LOGIN</button>
-            <p id="errorMessage" style="color: red; display: block;">Wrong password. Please try again.</p>
-        </form>
+    <div class="container">
+
+        
+        <!-- Sidebar Section -->
+        <aside>
+            <div class="toggle">
+                <div class="logo">
+                    <img src="../images/G.png" style="border-radius: 50%;">
+                    <h2>Spiritual<span class="danger">Guitar</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">
+                        close
+                    </span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="../main/Main.html">
+                    <span class="material-icons-sharp">
+                        home
+                        </span>
+                    <h3>Home</h3>
+                </a>
+                <a href="../tabs/tabs.html">
+                    <span class="material-icons-sharp">
+                        music_note
+                    </span>
+                    <h3>Tabs</h3>
+                </a>
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">
+                        person
+                    </span>
+                    <h3>Contact</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        insights
+                    </span>
+                    <h3>Analytics</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        mail_outline
+                    </span>
+                    <h3>Tickets</h3>
+                    <span class="message-count">27</span>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        inventory
+                    </span>
+                    <h3>Sale List</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        report_gmailerrorred
+                    </span>
+                    <h3>Reports</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">
+                        settings
+                    </span>
+                    <h3>Settings</h3>
+                </a>
+                <a href="../index.html">
+                    <span class="material-icons-sharp">
+                        logout
+                    </span>
+                    <h3>Logout</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- End of Sidebar Section -->
+
+        <!-- Main Content -->
+        <main>
+            <div class="dash-container">
+            <div class="dash">Contact</div></div>
+
+            
+
+
+
+
+
+
+
+            
+            <!-- Analyses -->
+            <div class="analyse">
+                <div class="info">
+                    <h3>Want to share our website? Go ahead</h3>
+                    <a id="share-button" href="#">
+                        <span class="material-symbols-outlined">
+                            ios_share
+                        </span>
+                </div>
+                <div class="sales">
+                    <div class="status">
+                        <div class="info">
+                            <h3>Need to Contact us? Click Contact</h3>
+                        </div>
+                        <div class="progresss">
+                            <div class="percentage">
+                                
+                                <a id="view-songs-link" href="mailto:spiritualguitar523@gmail.com">Contact</a>
+
+                        
+                                
+                                   
+                                            
+                                            </span></button></div>
+                                 
+                
+                    </div>
+                    
+                    
+                   </div>
+                    
+                </div>
+            </div>
+            <!-- End of New Users Section -->
+
+            <!-- Recent Orders Table -->
+           
+            <!-- End of Recent Orders -->
+
+        </main>
+        <!-- End of Main Content -->
+
+        <!-- Right Section -->
+        <div class="right-section">
+            <div class="nav">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">
+                        menu
+                    </span>
+                </button>
+                
+
+                <div class="profile">
+                    <div class="info">
+                    </div>
+                   
+                </div>
+
+            </div>
+            <!-- End of Nav -->
+
+          
+            
+
+         
+
+              
+
+               
+                
+
+            </div>
+
+        </div>
+
+
     </div>
 
- 
-   
-    <body>
-        
-      
-        
-    <script>
-      const correctPassword = "Edward1945!";
-const passwordInput = document.getElementById("passwordInput");
-const loginButton = document.getElementById("loginButton");
-const loginForm = document.getElementById("loginForm");
-const errorMessage = document.getElementById("errorMessage");
-
-// Function to handle device vibration
-function vibrateDevice() {
-    if ('vibrate' in navigator) {
-        navigator.vibrate([100, 30, 100]); // Vibrate pattern: 100ms on, 30ms off, 100ms on
-    }
-}
-
-passwordInput.addEventListener("input", () => {
-    if (passwordInput.value === correctPassword) {
-        loginButton.removeAttribute("disabled");
-        errorMessage.style.display = "none";
-    } else {
-        loginButton.setAttribute("disabled", "true");
-        errorMessage.style.display = "none"; // Hide error message while typing
-    }
-});
-
-loginButton.addEventListener("click", () => {
-    vibrateDevice(); // Vibrate when the login button is clicked
-});
-
-loginForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (passwordInput.value === correctPassword) {
-        vibrateDevice(); // Vibrate before redirecting
-        window.location.href = "main/Main.html"; // Redirect to Main.html
-    } else {
-        errorMessage.style.display = "block"; // Show error message on submit
-    }
-});
 
 
-    </script>
-    </body>
-    </html>
+
+
     
+
+    <script src="../music/music-list.js"></script>
+    <script src="../music/settings.js"></script>
+    <script src="../main/Main.js"></script>
+    <script src="tabs.js"></script>
+    <script src="script.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
