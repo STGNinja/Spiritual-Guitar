@@ -16,21 +16,21 @@ const music = new Audio();
 
 const songs = [
     {
-        path: 'Gethsemane Audio.m4a.mp3',
+        path: '../songs/Gethsemane Audio.mp3',
         displayName: 'Gethsemane',
-        cover: 'sacred_grove.jpg',
+        cover: '../images/sacred_grove.jpg',
         artist: 'Spiritual Guitar',
     },
     {
-        path: 'I Love To See The Temple Audio.wav',
+        path: '../songs/I Love To See The Temple Audio.mp3',
         displayName: 'I Love To See The Temple',
-        cover: 'temple.jpg',
+        cover: '../images/temple.jpg',
         artist: 'Spiritual Guitar',
     },
     {
-        path: 'Come, Come, Ye Saints Audio.m4a',
+        path: '../songs/Come, Come, Ye Saints Audio.mp3',
         displayName: 'Come, Come, Ye Saints',
-        cover: 'come.jpg',
+        cover: '../images/come.jpg',
         artist: 'Spiritual Guitar',
     }
 ];
