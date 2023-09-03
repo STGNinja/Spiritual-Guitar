@@ -12,7 +12,7 @@
     <div class="circle"></div>
     
     <div class="login">
-        <img src="../images/G.png" alt="Spiritual Guitar Logo">
+        <img src="images/G.png" alt="Spiritual Guitar Logo">
         <h3>Welcome Back!</h3>
         <h2>Spiritual Guitar</h2>
         <form class="login-form" id="loginForm">
@@ -60,7 +60,7 @@ loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (passwordInput.value === correctPassword) {
         vibrateDevice(); // Vibrate before redirecting
-        window.location.href = "../main/Main.html"; // Redirect to Main.html
+        window.location.href = "main/Main.html"; // Redirect to Main.html
     } else {
         errorMessage.style.display = "block"; // Show error message on submit
     }
