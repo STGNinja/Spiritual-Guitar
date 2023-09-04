@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
     // Send the email
     if (mail($to, $subject, $message, $headers)) {
-        // Redirect to thank_you.html upon successful submission
+        // Redirect to a thank you page after successful submission
         header("Location: thank_you.html");
         exit;
     } else {
