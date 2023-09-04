@@ -1280,7 +1280,7 @@ aside .toggle .close{
 
 main {
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: calc(100% - 8rem); /* Increased width to 8rem */
