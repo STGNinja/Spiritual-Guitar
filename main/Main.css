@@ -145,9 +145,12 @@ aside .toggle .logo img{
 }
 
 aside .toggle .close{
-    padding-right: 1rem;
+    padding-right: 5rem;
     display: none;
+    padding-left: 20px;
+    
 }
+
 
 aside .sidebar{
     display: flex;
