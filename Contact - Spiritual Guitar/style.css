@@ -1279,17 +1279,16 @@ aside .toggle .close{
 
 
 main {
-    position: absolute; /* Change from fixed to absolute positioning */
-    top: 55%;
-    left: 7%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(100% - 12rem);
+    width: calc(100% - 8rem); /* Increased width to 8rem */
     padding: 0 0.1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 25px;
-    max-height: calc(100% - 20px); /* Adjust max-height if needed */
+    max-height: calc(100% - 20px);
 }
 
 
