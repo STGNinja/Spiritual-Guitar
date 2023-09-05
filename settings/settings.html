@@ -104,30 +104,30 @@
                             <button id="notificationButton">Request Notification Permission</button>
 
                             <script>
-                                document.addEventListener("DOMContentLoaded", () => {
-                                    const notificationButton = document.getElementById("notificationButton");
-                        
-                                    notificationButton.addEventListener("click", () => {
-                                        // Check if the browser supports notifications
-                                        if ("Notification" in window) {
-                                            Notification.requestPermission()
-                                                .then(permission => {
-                                                    if (permission === "granted") {
-                                                        const notification = new Notification("Permission Granted", {
-                                                            body: "You can now receive notifications!",
-                                                            icon: "icon.png" // Replace with your own icon URL
-                                                        });
-                                                    } else if (permission === "denied") {
-                                                        alert("Notification permission denied. You won't receive notifications.");
-                                                    } else if (permission === "default") {
-                                                        alert("Notification permission request dismissed.");
-                                                    }
-                                                });
-                                        } else {
-                                            alert("Your browser doesn't support notifications.");
-                                        }
-                                    });
+                                 document.addEventListener("DOMContentLoaded", () => {
+            const notificationButton = document.getElementById("notificationButton");
+
+            notificationButton.addEventListener("click", () => {
+                // Check if the browser supports notifications
+                if ("Notification" in window) {
+                    Notification.requestPermission()
+                        .then(permission => {
+                            if (permission === "granted") {
+                                const notification = new Notification("Welcome to Spiritual Guitar Notifications", {
+                                    body: "Hello, you are now a part of Spiritual Guitar Notifications",
+                                    icon: "icon.png" // Replace with your own icon URL
                                 });
+                            } else if (permission === "denied") {
+                                alert("Notification permission denied. You won't receive notifications.");
+                            } else if (permission === "default") {
+                                alert("Notification permission request dismissed.");
+                            }
+                        });
+                } else {
+                    alert("Your browser doesn't support notifications.");
+                }
+            });
+        });
                             </script>
                         
                         <div class="progresss">
