@@ -233,6 +233,7 @@ aside .sidebar .message-count{
         position: absolute;
         transform: translateX(50%);
         transform: translateX(-50%);
+        
     }
     
 
@@ -244,6 +245,7 @@ main .analyse{
     border-top: solid;
     border-top-color: rgb(255, 179, 0);
     border-radius: 8px;
+    
 
 }
 
@@ -255,6 +257,7 @@ main .analyse > div{
     box-shadow: var(--box-shadow);
     cursor: cursor;
     transition: all 0.3s ease;
+    
     
 }
 
