@@ -101,23 +101,35 @@
                 <div class="sales">
                     <div class="status">
                         <div class="info">
-                           <div id="cookie-consent-banner">
-    <p>We use cookies to enhance your experience. <a href="#" id="learn-more-link">Learn more</a></p>
-    <button id="accept-cookies">Accept</button>
-    <span id="accept-status" style="display: none;">Pending...</span>
-  </div>
+                            <button id="notificationButton">Request Notification Permission</button>
 
-  <!-- Cookie Settings Page -->
-  <div id="cookie-settings" style="display: none;">
-    <h2>Cookie Settings</h2>
-    <ul>
-      <li><label><input type="checkbox" id="functional-cookies"> Functional Cookies</label></li>
-      <li><label><input type="checkbox" id="analytics-cookies"> Analytics Cookies</label></li>
-      <li><label><input type="checkbox" id="advertising-cookies"> Advertising Cookies</label></li>
-      <!-- Add more cookie settings as needed -->
-    </ul>
-  </div>
-
+                            <script>
+                                document.addEventListener("DOMContentLoaded", () => {
+                                    const notificationButton = document.getElementById("notificationButton");
+                        
+                                    notificationButton.addEventListener("click", () => {
+                                        // Check if the browser supports notifications
+                                        if ("Notification" in window) {
+                                            Notification.requestPermission()
+                                                .then(permission => {
+                                                    if (permission === "granted") {
+                                                        const notification = new Notification("Permission Granted", {
+                                                            body: "You can now receive notifications!",
+                                                            icon: "icon.png" // Replace with your own icon URL
+                                                        });
+                                                    } else if (permission === "denied") {
+                                                        alert("Notification permission denied. You won't receive notifications.");
+                                                    } else if (permission === "default") {
+                                                        alert("Notification permission request dismissed.");
+                                                    }
+                                                });
+                                        } else {
+                                            alert("Your browser doesn't support notifications.");
+                                        }
+                                    });
+                                });
+                            </script>
+                        
                         <div class="progresss">
                             <div class="percentage">
                        
@@ -128,33 +140,7 @@
 
          </div>
           
-                <div id="cookie-consent-banner">
-                    <h2>Notifications</h2><br>
-                    <button id="requestPermissionButton" style="border-radius: 8px; padding: 0.5rem;">Toggle Notifications</button>
-
-    <script>
-        // Function to request permission and handle the result
-        function requestNotificationPermission() {
-            // Check if the browser supports the Notification API
-            if ("Notification" in window) {
-                // Check if permission is already granted
-                if (Notification.permission === "granted") {
-                    // You can show push notifications
-                    // Your notification code here
-                } else if (Notification.permission !== "denied") {
-                    // Request permission from the user
-                    Notification.requestPermission().then(function (permission) {
-                        if (permission === "granted") {
-                            // You can show push notifications
-                            // Your notification code here
-                        }
-                    });
-                }
-            }
-        }
-
-        // Attach the requestNotificationPermission function to the button click event
-        document.getElementById("requestPermissionButton").addEventListener("click", requestNotificationPermission);
+          
     </script>
                   </div></div>
             <div class="progresss">
