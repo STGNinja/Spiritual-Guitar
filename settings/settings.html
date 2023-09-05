@@ -102,6 +102,7 @@
                     <div class="status">
                         <div class="info">
                             <div id="cookie-consent-banner">
+                                <h2>Cookies</h2><br>
                                 <p>We use cookies to enhance your experience. <a href="#" id="learn-more-link"><br>View Cookie Settings</a></p>
                                 <br><button id="accept-cookies" style="padding: 0.3rem; border-radius: 8px;">Accept</button>
                                 <span id="accept-status" style="display: none;">Pending...</span>
@@ -125,38 +126,50 @@
                 </div>
             </div></div>
 
-            <div class="info">
-                <button id="subscribe-button">Subscribe to Push Notifications</button>
+         </div>
+          
+                <div id="cookie-consent-banner">
+                    <h2>Notifications</h2><br>
+                    <button id="requestPermissionButton" style="border-radius: 8px; padding: 0.5rem;">Toggle Notifications</button>
 
-                <script>
-                  const subscribeButton = document.getElementById('subscribe-button');
-              
-                  subscribeButton.addEventListener('click', function() {
-                    if ('serviceWorker' in navigator && 'PushManager' in window) {
-                      navigator.serviceWorker.ready
-                        .then(function(registration) {
-                          return registration.pushManager.subscribe({
-                            userVisibleOnly: true,
-                            applicationServerKey: 'your-public-key'
-                          });
-                        })
-                        .then(function(subscription) {
-                          console.log('Push Subscription:', subscription);
-                          alert('Push notifications subscribed!');
-                        })
-                        .catch(function(error) {
-                          console.error('Push subscription failed:', error);
-                        });
-                    }
-                  });
-                </script>
+    <script>
+        // Function to request permission and handle the result
+        function requestNotificationPermission() {
+            // Check if the browser supports the Notification API
+            if ("Notification" in window) {
+                // Check if permission is already granted
+                if (Notification.permission === "granted") {
+                    // You can show push notifications
+                    // Your notification code here
+                } else if (Notification.permission !== "denied") {
+                    // Request permission from the user
+                    Notification.requestPermission().then(function (permission) {
+                        if (permission === "granted") {
+                            // You can show push notifications
+                            // Your notification code here
+                        }
+                    });
+                }
+            }
+        }
+
+        // Attach the requestNotificationPermission function to the button click event
+        document.getElementById("requestPermissionButton").addEventListener("click", requestNotificationPermission);
+    </script>
+                  </div></div>
             <div class="progresss">
                 <div class="percentage">
            
 
         
     </div>
+</div></div>
+
+           
+         
+    </div>
 </div>
+
             <!-- End of New Users Section -->
 
             <!-- Recent Orders Table -->
