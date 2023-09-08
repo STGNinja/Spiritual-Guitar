@@ -66,9 +66,9 @@ body{
     width: 90%;
     padding: 70px 30px 44px;
     border-radius: 1.25rem;
-    background-color: rgb(000, 000,000, .09);
+    background-color: rgb(000, 000,000, 0.199);
     backdrop-filter: blur(100px);
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
     text-align: center;
 }
 
