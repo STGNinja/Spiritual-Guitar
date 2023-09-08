@@ -22,14 +22,37 @@ body{
     background-image: radial-gradient(at 88% 0%,
       hsla(327, 67%, 64%, 1) 0px,
       transparent 50%),
-    radial-gradient(at 63% 46%, hsla(307, 76%, 61%, 1) 0px, transparent 50%),
-    radial-gradient(at 95% 53%, hsla(89, 91%, 67%, 1) 0px, transparent 50%),
-    radial-gradient(at 79% 83%, hsla(170, 86%, 65%, 1) 0px, transparent 50%),
-    radial-gradient(at 74% 93%, hsla(71, 93%, 75%, 1) 0px, transparent 50%),
-    radial-gradient(at 52% 13%, hsla(110, 83%, 72%, 1) 0px, transparent 50%),
-    radial-gradient(at 30% 80%, hsla(263, 79%, 66%, 1) 0px, transparent 50%);
+    radial-gradient(at 63% 46%, rgb(84, 45, 80) 0px, transparent 50%),
+    radial-gradient(at 95% 53%, rgb(85, 88, 82) 0px, transparent 50%),
+    radial-gradient(at 79% 83%, rgb(5, 255, 213) 0px, transparent 50%),
+    radial-gradient(at 74% 93%, rgb(40, 42, 28) 0px, transparent 50%),
+    radial-gradient(at 52% 13%, rgb(164, 164, 164) 0px, transparent 50%),
+    radial-gradient(at 30% 80%, rgb(25, 6, 57) 0px, transparent 50%);
     color: #000;
     font-family: 'Ubuntu';
+}
+
+.material-symbols-outlined {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+/* Initially hide the hello message */
+.hidden {
+    display: none;
+}
+
+#helloMessage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
 
@@ -43,7 +66,9 @@ body{
     width: 90%;
     padding: 70px 30px 44px;
     border-radius: 1.25rem;
-    background: #fff;
+    background-color: rgb(000, 000,000, .09);
+    backdrop-filter: blur(100px);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -94,18 +119,19 @@ body{
 }
 
 .login-form > input:hover{
-    border-bottom: 2px solid #303f9f;
+    border-bottom: 2px solid #767676;
 }
 
 .login-form > input:focus{
-    border-bottom: 2px solid #1976d2;
+    border-bottom: 2px solid #3074a8;
 }
 
 .login-form > button{
     cursor: pointer;
     width: 100%;
     height: 56px;
-    background: #303f9f;
+    background-color: rgb(000, 000, 000, 0.2);
+    backdrop-filter: blur(20px);
     color: #f9f9f9;
     border: 0;
     border-radius: 10px;
@@ -116,7 +142,8 @@ body{
 }
 
 .login-form > button:hover{
-    background-color: #1976d2;
+    background-color: rgba(224, 224, 224, 0.2);
+    backdrop-filter: blur(20px);
 }
 
 .login-form > a{
@@ -148,3 +175,6 @@ body{
         width: 25%;
     }
 }
+
+
+   
