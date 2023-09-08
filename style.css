@@ -170,11 +170,5 @@ body{
     }
 }
 
-@media (width >= 1200px){
-    .login{
-        width: 25%;
-    }
-}
-
 
    
