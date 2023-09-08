@@ -23,11 +23,14 @@
         <h3>Welcome Back!</h3>
         <h2>Spiritual Guitar</h2>
         <form class="login-form" id="loginForm">
+            <input type="text" id="usernameInput" placeholder="Enter your username">
             <input type="password" id="passwordInput" placeholder="Enter your passcode">
+            <span class="material-symbols-outlined" style="padding: 0px; left: 59%; top: 408px; cursor: pointer;" id="togglePassword">
+                visibility_off
+            </span>
             <button type="submit" id="loginButton" disabled>LOGIN</button>
         </form>
     </div>
-
  
    
     <body>
@@ -35,71 +38,50 @@
       
         
     <script>
+  
+  const usernameInput = document.getElementById("usernameInput");
+        const passwordInput = document.getElementById("passwordInput");
+        const togglePassword = document.getElementById("togglePassword");
+        const loginButton = document.getElementById("loginButton");
 
-
-
-      const correctPassword = "Edward1945!";
-const passwordInput = document.getElementById("passwordInput");
-const loginButton = document.getElementById("loginButton");
-const loginForm = document.getElementById("loginForm");
-const errorMessage = document.getElementById("errorMessage");
-
-// Function to handle device vibration
-function vibrateDevice() {
-    if ('vibrate' in navigator) {
-        navigator.vibrate([100, 30, 100]); // Vibrate pattern: 100ms on, 30ms off, 100ms on
-    }
-}
-
-passwordInput.addEventListener("input", () => {
-    if (passwordInput.value === correctPassword) {
-        loginButton.removeAttribute("disabled");
-        errorMessage.style.display = "none";
-    } else {
-        loginButton.setAttribute("disabled", "true");
-        errorMessage.style.display = "none"; // Hide error message while typing
-    }
-});
-
-loginButton.addEventListener("click", () => {
-    vibrateDevice(); // Vibrate when the login button is clicked
-});
-
-loginForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (passwordInput.value === correctPassword) {
-        vibrateDevice(); // Vibrate before redirecting
-        window.location.href = "../main/Main.html"; // Redirect to Main.html
-    } else {
-        errorMessage.style.display = "block"; // Show error message on submit
-    }
-});
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    const scrollButton = document.getElementById("scrollButton");
-    const helloMessage = document.getElementById("helloMessage");
-
-    scrollButton.addEventListener("click", function () {
-        // Calculate the scroll distance based on the helloMessage position
-        const scrollDistance = helloMessage.offsetTop - window.innerHeight + helloMessage.clientHeight;
-
-        // Scroll down smoothly to reveal the message
-        window.scrollTo({
-            top: scrollDistance,
-            behavior: "smooth",
+        // Function to toggle password visibility
+        togglePassword.addEventListener("click", function () {
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                togglePassword.textContent = "visibility";
+            } else {
+                passwordInput.type = "password";
+                togglePassword.textContent = "visibility_off";
+            }
         });
 
-        // Show the hello message after a short delay
-        setTimeout(function () {
-            helloMessage.classList.remove("hidden");
-        }, 1000); // Adjust the delay as needed
-    });
-});
+        // Function to handle form submission
+        document.getElementById("loginForm").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form submission to handle it manually
 
+            // Check if username and password are correct
+            const username = "jaxonsmuth123@gmail.com";
+            const password = "Edward1945!";
+            if (usernameInput.value === username && passwordInput.value === password) {
+                // Redirect to Main.html
+                window.location.href = "main/Main.html";
+            } else {
+                // Display an error message or perform other actions for incorrect credentials
+                alert("Incorrect username or password. Please try again.");
+            }
+        });
 
+        // Enable the login button when both fields are filled
+        usernameInput.addEventListener("input", validateForm);
+        passwordInput.addEventListener("input", validateForm);
+
+        function validateForm() {
+            if (usernameInput.value.trim() !== "" && passwordInput.value.trim() !== "") {
+                loginButton.disabled = false;
+            } else {
+                loginButton.disabled = true;
+            }
+        }
 
     </script>
     <script src="script.js"></script>
